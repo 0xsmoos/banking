@@ -14,6 +14,7 @@ running = True
 while running:
 	client, client_address = s.accept()
 	print(f"Connected to: {client_address}.")
+	print(s.recv(1024))
 
 
 class Account:
@@ -32,5 +33,5 @@ class Account:
 		pass
 
 demitri = Account("demitri")
-demitri.add
+# demitri.add
 
