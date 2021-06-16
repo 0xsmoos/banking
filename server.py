@@ -31,4 +31,6 @@ class Account:
 	def transfer(self, amount, recipient):
 		pass
 
-Account("demitri", )
+demitri = Account("demitri")
+demitri.add
+
