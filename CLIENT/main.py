@@ -8,7 +8,7 @@ client = server.Client(host="ianmc.ga")
 def sign_up(name, balance):
 	client.create_new_account(name, balance)
 	
-# account = server.Account("Ian", 100)
+# account = server.Account("Demitri", 0)
 # print(account.add(200))
 
 
