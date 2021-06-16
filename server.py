@@ -8,13 +8,14 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((host, port))
 print(f"Socket bound to: {host} | {port}.")
 s.listen()
-
+client, client_address = s.accept()
 
 running = True
 while running:
-	client, client_address = s.accept()
 	print(f"Connected to: {client_address}.")
-	print(s.recv(1024))
+	msg = client.recv(1024).decode("utf8")
+	if msg != "":
+		print(msg)
 
 
 class Account:
