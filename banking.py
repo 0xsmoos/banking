@@ -11,19 +11,23 @@ class Chain:
 		self.balance = balance
 		self.address = address
 		self.chain   = []
-        #self.create_block(previous_hash = '0')
+		#self.create_block(previous_hash = '0')
 		addresses.append(self.address)
 
 
 	def create_block(self):
-	        block = {'index': len(self.chain) + 1,
-	                 'timestamp': str(datetime.datetime.now())}
-	        self.chain.append(block)
-	        return block
+		block = {'index': len(self.chain) + 1, 'timestamp': str(datetime.datetime.now())}
+		self.chain.append(block)
+		return block
 
 	def hash(self, block):
-	        encoded_block = json.dumps(block, sort_keys = True).encode()
-	        return hashlib.sha256(encoded_block).hexdigest()
+		encoded_block = json.dumps(block, sort_keys = True).encode()
+		return hashlib.sha256(encoded_block).hexdigest()
+
+main_chain = Chain("Ian", 10, "Rico's Island")
+block = main_chain.create_block()
+print(block)
+print(main_chain.hash(block))
 
 	# def menu(self):
 	# 	selection = input("Welcome to sieNet. What would you like to do?")
